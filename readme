@@ -1,0 +1,70 @@
+# 📧 AI-Based Gmail Automation using OpenAI and Selenium
+
+## 📝 Overview
+
+This project is designed to automate the Gmail email composition and sending process using a combination of OpenAI's language model and Selenium browser automation. It intelligently generates email subject lines and body content, automates Gmail login and message sending, and captures screenshots of critical stages including the login page, the compose email interface, and the confirmation message after sending the email. These screenshots are attached to an email and sent out as proof of action.
+
+---
+
+## ⚙️ Features
+
+The key features of the project include:
+- Automatically logging into Gmail using Selenium.
+- Generating personalized email subjects and bodies using OpenAI's GPT API.
+- Capturing and saving screenshots during the process (login, compose, confirmation).
+- Sending an email with the generated content and attached screenshots using Python's SMTP libraries.
+- A user-friendly Streamlit interface to trigger and control the workflow.
+
+---
+
+## 📁 Project Structure
+
+The project is organized into the following files:
+- `app.py`: A Streamlit frontend to run the automation and visualize results.
+- `screenshotagent.py`: A script that handles Gmail login and takes screenshots of the login, compose, and confirmation pages using Selenium.
+- `sendemail.py`: Handles sending an email with attachments (screenshots) via SMTP.
+- `requirements.txt`: Contains all the required Python libraries for this project.
+- `README.md`: Project documentation and usage instructions.
+
+---
+
+## 🖥️ Installation
+
+To get started, clone the repository and install the dependencies. You can also set up a virtual environment for better isolation.
+
+```bash
+git clone https://github.com/your-username/ai-gmail-agent.git
+cd ai-gmail-agent
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+🔐 Environment Setup
+Create a .env file in the project root directory and add the following variables:
+
+env
+Copy
+Edit
+OPENAI_API_KEY=your_openai_key
+SENDER_EMAIL=your_email@gmail.com
+RECEIVER_EMAIL=receiver_email@gmail.com
+Ensure that your Gmail account allows access by enabling "less secure apps" or setting up OAuth2 for a more secure method.
+
+▶️ Running the Application
+After installation and setup, you can start the Streamlit app by running:
+
+bash
+Copy
+Edit
+streamlit run app.py
+This will launch a web interface in your browser. You can then use the buttons to generate email content, open the Gmail interface using Selenium, capture screenshots at different steps, and send the composed email with the screenshots attached.
+
+📸 Screenshots
+During the process, screenshots are saved in the screenshots/ folder. These include:
+
+login.png: Captured after logging in to Gmail.
+
+compose.png: Captured at the email composition window.
+
+confirmation.png: Captured after the email has been successfully sent.
+
+These screenshots are attached to the final email that is sent, providing a visual audit of the proc
